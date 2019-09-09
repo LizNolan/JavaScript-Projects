@@ -45,7 +45,7 @@ function let_Function() {
 }
 
 function getPie(){
-    return Math.PI;
+    return Math.PI;//This returns the value of pie.
 }
 
 function showPie(){
