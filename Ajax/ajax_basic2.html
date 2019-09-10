@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="demo">
+            <h2>OnReadyStateChange</h2>
+            <button type="button" onclick="loadDoc()">Change Content</button>
+        </div>
+        <script>
+            function loadDoc() {
+                var xhttp  = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML=this.responseText;
+                    }
+                };
+                xhttp.open("GET", "content2.html", true);
+                xhttp.send();
+            }
+
+		</script>
+    </body>
+</html>
