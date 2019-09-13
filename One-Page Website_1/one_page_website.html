@@ -4,10 +4,33 @@
 		<title>Jimi Hendrix!</title>
 		<link rel="stylesheet" href="./css/one_page_website.css">
 		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	</head>
 		<h1>Jimi</h1>
 	<body>
+		<script>document.body.className +=' fade-out';</script>
+		<script>
+			$(function() {
+				$('body').removeClass('fade-out');
+			});
+		</script>
 		<p>This is my Jimi Hendrix page </p>
+		<div class="form-popup" id="lizForm">
+				<form action="/action_page.php" class="form-container">
+				  <h1>Login</h1>
+			  
+				  <label for="email"><b>Email</b></label>
+				  <input type="text" placeholder="Enter Email" name="email" required>
+			  
+				  <label for="psw"><b>Password</b></label>
+				  <input type="password" placeholder="Enter Password" name="psw" required>
+			  
+				  <button type="submit" class="btn">Login</button>
+				  <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+				</form>
+			  </div>
+			</form>
+		</div>
 			
 		<!-- NAV -->
 		<div>
@@ -115,11 +138,9 @@
 							Please provide us with your contact info
 						</p>
 						<div>
-							<form action="" method="post">
-								<input class="rsvp" type="text" value="First Name">
-								<input class="rsvp" type="text" value="Last Name">
-								<input class="rsvp" type="text" value="Email Address">
-								<input class="rsvp" type="text" value="Phone Number">
+							<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+								Name: <input type="text" name="fname">
+								Phone Number: <input type="text" name="phone">
 								<div class="form-spacer">
 									<label class="terms">Terms and Conditions</label>
 								</div>

@@ -1,3 +1,19 @@
+function validateForm() {
+  var x = document.forms["myForm"]["phone"].value;
+  if (x=="") {
+    alert("Phone number must be filled out");
+    return false;
+  }
+  function openForm() {
+    document.getElementById("lizForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("lizForm").style.display = "none";
+  }
+
+}
+
 function openModal() {
     document.getElementById("myModal").style.display = "block";
   }
